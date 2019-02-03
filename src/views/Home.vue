@@ -1,8 +1,9 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+      <div className='SearchBar'>
+        <input v-model="searchTerm" placeholder="Enter A Song, Album, or Artist">
+        <button type="submit" v-on:click="test" name="SEARCH">
+        </button>
+      </div>
 </template>
 
 <script>
