@@ -16,11 +16,23 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100%;
+  width: 100vw;
+  display: grid;
+  grid-template-areas:
+    "Navbar SearchBar SearchBar SearchBar"
+    "Navbar Main Main Main"
+    "Player Player Player Player";
+  grid-template-columns: 3.5rem repeat(3, 2fr);
+  grid-template-rows: 2.22rem 1fr 6.375rem;
+  background-color: #100e17;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  color: #fff;
 }
 </style>

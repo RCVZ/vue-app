@@ -1,13 +1,28 @@
 <template>
   <div class="SearchBar">
     <input v-model="searchTerm" placeholder="Enter A Song, Album, or Artist" />
-    <button type="submit" v-on:click="test" name="SEARCH"></button>
+    <button
+      class="Search_Button"
+      type="submit"
+      v-on:click="submitSearch"
+      name="SEARCH"
+    />
   </div>
 </template>
 
 <script>
 export default {
-  name: "SearchBar"
+  name: "SearchBar",
+  data: function() {
+    return {
+      searchTerm: ""
+    };
+  },
+  methods: {
+    submitSearch: function() {
+      console.log(this.searchTerm);
+    }
+  }
 };
 </script>
 
@@ -36,7 +51,8 @@ export default {
 
 .SearchBar .Search_Button {
   position: relative;
-  right: 1.6rem;
-  color: rgb(0, 8, 33);
+  background-color: rgb(33, 0, 0);
+  height: 20px;
+  width: 20px;
 }
 </style>
