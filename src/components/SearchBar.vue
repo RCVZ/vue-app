@@ -1,12 +1,9 @@
 <template>
   <div class="SearchBar">
     <input v-model="searchTerm" placeholder="Enter A Song, Album, or Artist" />
-    <button
-      class="Search_Button"
-      type="submit"
-      v-on:click="submitSearch"
-      name="SEARCH"
-    />
+    <button type="submit" v-on:click="submitSearch" name="SEARCH">
+      <FontAwesomeIcon class="Search_Button" icon="search" />
+    </button>
   </div>
 </template>
 
@@ -26,10 +23,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .SearchBar {
   display: flex;
   align-items: center;
+  grid-column: 2 / 5;
   justify-content: center;
   height: 2.223rem;
   width: 100%;
@@ -51,8 +49,7 @@ export default {
 
 .SearchBar .Search_Button {
   position: relative;
-  background-color: rgb(33, 0, 0);
-  height: 20px;
-  width: 20px;
+  right: 1.6rem;
+  color: rgb(0, 8, 33);
 }
 </style>
