@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import SpotifyApi from "../util/Spotify";
+
 export default {
   name: "SearchBar",
   data: function() {
@@ -17,7 +19,7 @@ export default {
   },
   methods: {
     submitSearch: function() {
-      console.log(this.searchTerm);
+      SpotifyApi.fullSearch(this.searchTerm).then(items => console.log(items));
     }
   }
 };
