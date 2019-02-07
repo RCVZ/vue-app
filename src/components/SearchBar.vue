@@ -1,26 +1,41 @@
 <template>
-  <div class="SearchBar">
-    <input v-model="searchTerm" placeholder="Enter A Song, Album, or Artist" />
-    <button type="submit" v-on:click="submitSearch" name="SEARCH">
-      <FontAwesomeIcon class="Search_Button" icon="search" />
-    </button>
+  <div>
+    <div class="SearchBar">
+      <input v-model="searchTerm" placeholder="Enter A Song, Album, or Artist" />
+      <button type="submit" v-on:click="submitSearch" name="SEARCH">
+        <FontAwesomeIcon class="Search_Button" icon="search" />
+      </button>
+    </div>
+    <Track
+      v-for="(track, index) in tracks"
+      v-bind:track="track"
+      v-bind:key="track.id"
+      v-bind:index="index"
+    />
   </div>
 </template>
 
 <script>
 import SpotifyApi from "../util/Spotify";
+import Track from "./Track.vue";
 
 export default {
   name: "SearchBar",
   data: function() {
     return {
-      searchTerm: ""
+      searchTerm: "",
+      tracks: []
     };
   },
   methods: {
     submitSearch: function() {
-      SpotifyApi.fullSearch(this.searchTerm).then(items => console.log(items));
+      SpotifyApi.fullSearch(this.searchTerm).then(function (items) {
+        this.tracks = [...items.tracks]
+        });
     }
+  },
+  components: {
+    Track
   }
 };
 </script>
