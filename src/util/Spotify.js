@@ -136,7 +136,7 @@ const SpotifyApi = {
       tracks: await SpotifyApi.searchTracks(searchTerm)
     };
     console.log(resultsList);
-    return resultsList;
+    return await resultsList;
   },
 
   async nextResults(searchTerm, offset, type) {

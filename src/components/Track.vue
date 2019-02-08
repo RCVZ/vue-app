@@ -55,8 +55,6 @@ export default {
 }
 
 .Track-information .Time {
-  margin-right: 0.50rem;
+  margin-right: 0.5rem;
 }
 </style>
-
-

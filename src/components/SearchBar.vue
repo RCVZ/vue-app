@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="SearchBar">
-      <input v-model="searchTerm" placeholder="Enter A Song, Album, or Artist" />
+      <input 
+        v-model="searchTerm" 
+        placeholder="Enter A Song, Album, or Artist" 
+      />
       <button type="submit" v-on:click="submitSearch" name="SEARCH">
         <FontAwesomeIcon class="Search_Button" icon="search" />
       </button>
@@ -29,9 +32,10 @@ export default {
   },
   methods: {
     submitSearch: function() {
-      SpotifyApi.fullSearch(this.searchTerm).then(function (items) {
-        this.tracks = [...items.tracks]
-        });
+      let vm = this;
+      SpotifyApi.fullSearch(this.searchTerm).then(items => {
+        vm.tracks = items.tracks;
+      });
     }
   },
   components: {
