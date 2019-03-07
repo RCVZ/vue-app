@@ -2,7 +2,7 @@
   <div className="Track">
     <div className="Track-information">
       <div className="Album-img" >
-        <img className="shadow" src="track.album.images[2].url" alt="album" /> 
+        <img className="shadow" :src="track.album.images[2].url" alt="album" /> 
       </div>
       <div className="Track-name">
         <span>{{track.name}}</span>

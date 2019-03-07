@@ -13,6 +13,14 @@ import Main from "./components/Main.vue";
 
 export default {
   name: "app",
+  data: function() {
+    return {
+      tracks: []
+    }
+  },
+  methods: {
+    
+  },
   components: {
     SearchBar,
     Navigation,
